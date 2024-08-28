@@ -5,7 +5,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/4fbd4e15184290ee0025/maintainability)](https://codeclimate.com/github/nityulam/frontend-project-44/maintainability)
 
 <h3>Game: "Parity Check"</h3>
-<br>
+
 <a href="https://asciinema.org/a/h6baYLaGyAIwBNOu1mgVE2hSe" target="_blank"><img src="https://asciinema.org/a/h6baYLaGyAIwBNOu1mgVE2hSe.svg" /></a>
 
 <h3>Game: "Calculator"</h3>
