@@ -1,34 +1,32 @@
 import generalLogicForGames from '../index.js';
 
-// Не могу разобратся почему при сохранении, автоматически переносит текст на другую строку.
+// Не могу разобраться почему при сохранении, автоматически переносит текст на другую строку.
 // Какое правило описывает данное поведение?
-const ruleOfGame =
-  'Answer "yes" if given number is prime. Otherwise answer "no".';
+// Дело было в настройках макс длины строки Prettier (поменял в VSC)
+const ruleOfGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const randomNumber = (min = 2, max = 100) => {
+const randomNumber = (min = 2, max = 5) => {
   const random = Math.floor(Math.random() * (max - min) + min);
   return random;
 };
 
-const findingPrimeNumber = () => {
-  const numberRepresented = randomNumber();
-  // console.log('Проверяемое число', numberRepresented, typeof numberRepresented);
+const isPrimeNumber = (num) => {
+  if (num < 2) {
+    return false;
+  }
 
-  let result;
-
-  for (let i = 2; i < numberRepresented; i += 1) {
-    if (numberRepresented % i === 0) {
-      result = 'no';
-      return [numberRepresented, result];
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) {
+      return false;
     }
   }
-  // Туплю. Как вывести result = 'yes' выше, чтоб он небыл на одном уровне с return.
-  // Если вывожу, то 2 не проходит проверку на простое число
-  return [numberRepresented, (result = 'yes')];
+
+  return true;
 };
 
 const correctAnswer = () => {
-  const [question, rightAnswer] = findingPrimeNumber();
+  const question = randomNumber();
+  const rightAnswer = isPrimeNumber(question) ? 'yes' : 'no';
 
   return [question, rightAnswer];
 };
