@@ -22,9 +22,10 @@ const generalLogicForGames = (ruleOfGame, correctAnswer) => {
     if (answer.toLowerCase().replaceAll(' ', '') === rightAnswer) {
       console.log('Correct!');
     } else {
-      console.log(
-        `'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`
-      );
+      // Не могу разобраться почему при сохранении, автоматически переносит
+      // скобку с точкой с запятой на другую строку.Какое правило описывает данное поведение?
+      // Дело было в настройках макс длины строки Prettier (поменял в VSC)
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
