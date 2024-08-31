@@ -12,6 +12,9 @@
 <p>$ make install</p>
 <p>$ npm link</p>
 
+To start the game, you will need:
+Node.js - v20.15.1
+
 <h3>Game: "Parity Check"</h3>
 <a href="https://asciinema.org/a/h6baYLaGyAIwBNOu1mgVE2hSe" target="_blank"><img src="https://asciinema.org/a/h6baYLaGyAIwBNOu1mgVE2hSe.svg" /></a>
 
