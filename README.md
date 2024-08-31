@@ -11,11 +11,11 @@ Mind Games is a set of five console games based on the principle of popular mobi
 ### Installing the game:
 
 ```
-$ make install
-$ npm link
+> $ make install
+> $ npm link
 ```
 
-To start the game, you will need:
+##### To start the game, you will need:
 
 ```
 Node.js - v20.15.1
