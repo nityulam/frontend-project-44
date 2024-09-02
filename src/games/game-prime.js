@@ -1,16 +1,9 @@
 import generalLogicForGames from '../index.js';
+import getRandomNumber from '../random-number.js';
 
-// Не могу разобраться почему при сохранении, автоматически переносит текст на другую строку.
-// Какое правило описывает данное поведение?
-// Дело было в настройках макс длины строки Prettier (поменял в VSC)
 const ruleOfGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const randomNumber = (min = 2, max = 5) => {
-  const random = Math.floor(Math.random() * (max - min) + min);
-  return random;
-};
-
-const isPrimeNumber = (num) => {
+const getPrimeNumber = (num) => {
   if (num < 2) {
     return false;
   }
@@ -24,13 +17,13 @@ const isPrimeNumber = (num) => {
   return true;
 };
 
-const correctAnswer = () => {
-  const question = randomNumber();
-  const rightAnswer = isPrimeNumber(question) ? 'yes' : 'no';
+const getQuestionAndCorrectAnswer = () => {
+  const question = getRandomNumber();
+  const rightAnswer = getPrimeNumber(question) ? 'yes' : 'no';
 
   return [question, rightAnswer];
 };
 
 export default () => {
-  generalLogicForGames(ruleOfGame, correctAnswer);
+  generalLogicForGames(ruleOfGame, getQuestionAndCorrectAnswer);
 };
