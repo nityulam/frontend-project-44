@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import gameGreatestCommonDivisor from '../src/games/game-gcd.js';
+import playGameGreatestCommonDivisor from '../src/games/game-gcd.js';
 
-gameGreatestCommonDivisor();
+playGameGreatestCommonDivisor();
