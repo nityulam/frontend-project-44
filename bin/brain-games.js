@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import findOutName from '../src/cli.js';
+import hasFindOutName from '../src/cli.js';
 
-findOutName();
+hasFindOutName();
