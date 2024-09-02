@@ -2,9 +2,9 @@ import readlineSync from 'readline-sync';
 
 console.log('Welcome to the Brain Games!');
 
-const findOutName = () => {
+const hasFindOutName = () => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 };
 
-export default findOutName;
+export default hasFindOutName;
