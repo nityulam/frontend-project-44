@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import gamePrimeNumber from '../src/games/game-prime.js';
+import playGamePrimeNumber from '../src/games/game-prime.js';
 
-gamePrimeNumber();
+playGamePrimeNumber();
