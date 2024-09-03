@@ -1,5 +1,5 @@
 import generalLogicForGames from '../index.js';
-import getRandomNumber from '../random-number.js';
+import getRandomNumber from '../utils.js';
 
 const ruleOfGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
