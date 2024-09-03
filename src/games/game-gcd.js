@@ -1,5 +1,5 @@
 import generalLogicForGames from '../index.js';
-import getRandomNumber from '../random-number.js';
+import getRandomNumber from '../utils.js';
 
 const ruleOfGame = 'Find the greatest common divisor of given numbers.';
 
