@@ -1,29 +1,34 @@
 import generalLogicForGames from '../index.js';
-import getRandomNumber from '../random-number.js';
+import getRandomNumber from '../utils.js';
 
 const ruleOfGame = 'What number is missing in the progression?';
 
-const getArithmeticProgression = () => {
-  const lengthProgression = getRandomNumber(4, 10);
-
-  let beginningOfArrayWithItsSubsequentIncrease = getRandomNumber(0, 50);
-  const stepIncreasingProgression = getRandomNumber(2, 11);
+const getArithmProgression = (lengthProgression, stepProgression, firstElementOfArray) => {
   const arrayOfArithProgression = [];
-
+  let temp = firstElementOfArray;
   for (let i = 0; i <= lengthProgression; i += 1) {
-    beginningOfArrayWithItsSubsequentIncrease += stepIncreasingProgression;
-    arrayOfArithProgression.push(beginningOfArrayWithItsSubsequentIncrease);
+    temp += stepProgression;
+    arrayOfArithProgression.push(temp);
   }
+  return arrayOfArithProgression;
+};
 
-  const indexArrayBeReplaced = getRandomNumber(0, arrayOfArithProgression.length);
-  const hiddenArrayElement = arrayOfArithProgression[indexArrayBeReplaced];
-  arrayOfArithProgression[indexArrayBeReplaced] = '..';
+const getQuestionAndAnswer = () => {
+  const lengthProgression = getRandomNumber(4, 10);
+  const stepProgression = getRandomNumber(2, 11);
+  const firstElementOfArray = getRandomNumber(0, 50);
 
-  return [arrayOfArithProgression.join(' '), String(hiddenArrayElement)];
+  const progression = getArithmProgression(lengthProgression, stepProgression, firstElementOfArray);
+  const indexArrayBeReplaced = getRandomNumber(0, progression.length);
+  const rightAnswer = progression[indexArrayBeReplaced];
+  progression[indexArrayBeReplaced] = '..';
+  const question = progression.join(' ');
+
+  return [question, String(rightAnswer)];
 };
 
 const getQuestionAndCorrectAnswer = () => {
-  const [question, rightAnswer] = getArithmeticProgression();
+  const [question, rightAnswer] = getQuestionAndAnswer();
 
   return [question, rightAnswer];
 };
