@@ -1,9 +1,9 @@
 import generalLogicForGames from '../index.js';
-import getRandomNumber from '../random-number.js';
+import getRandomNumber from '../utils.js';
 
 const ruleOfGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const getPrimeNumber = (num) => {
+const isPrimeNumber = (num) => {
   if (num < 2) {
     return false;
   }
@@ -19,7 +19,7 @@ const getPrimeNumber = (num) => {
 
 const getQuestionAndCorrectAnswer = () => {
   const question = getRandomNumber();
-  const rightAnswer = getPrimeNumber(question) ? 'yes' : 'no';
+  const rightAnswer = isPrimeNumber(question) ? 'yes' : 'no';
 
   return [question, rightAnswer];
 };
